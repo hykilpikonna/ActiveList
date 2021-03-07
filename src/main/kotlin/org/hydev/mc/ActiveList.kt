@@ -62,6 +62,7 @@ class ActiveList : JavaPlugin(), CommandExecutor
             }
             catch (e: Exception) { e.printStackTrace(); null }
         }
+        if (list == null) return "Error: Failed to obtain player info list".red()
 
         // Create result
         val pageMax = ceil(list.size.toDouble() / pageSize).toInt()
