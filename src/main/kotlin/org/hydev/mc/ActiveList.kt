@@ -28,3 +28,9 @@ class ActiveList : JavaPlugin(), CommandExecutor
         return true
     }
 }
+
+fun Date.format(f: String = "yyyy-MM-dd"): String
+{
+    val date = this.toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
+    return date.format(DateTimeFormatter.ofPattern(f))
+}
