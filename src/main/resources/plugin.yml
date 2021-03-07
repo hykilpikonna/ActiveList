@@ -6,6 +6,9 @@ main: org.hydev.mc.ActiveList
 version: 1.0
 api-version: 1.14
 
+load: POSTWORLD
+depend: [Essentials]
+
 commands:
   activelist:
     description: View the active list of players' last login dates
