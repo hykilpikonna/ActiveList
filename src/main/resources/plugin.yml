@@ -12,5 +12,8 @@ depend: [Essentials]
 commands:
   activelist:
     description: View the active list of players' last login dates
+    aliases:
+      - al
+      - ll
     usage: /activelist [page=1] [pageSize=10] [-a/-d (sort ascending or descending)]
     permission: activelist.view
