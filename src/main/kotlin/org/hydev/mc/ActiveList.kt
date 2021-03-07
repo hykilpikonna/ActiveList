@@ -36,6 +36,16 @@ class ActiveList : JavaPlugin(), CommandExecutor
     {
         val dirPlugins = dataFolder.parent
         val dir = File(dirPlugins, "Essentials/userdata")
+
+        // Get args
+        var reversed = false
+        if (args.contains("-r"))
+        {
+            reversed = true
+            args.remove("-r")
+        }
+        val page = args.getOrNull(0)?.toIntOrNull() ?: 1
+        val pageSize = args.getOrNull(1)?.toIntOrNull() ?: 10
     }
 }
 
