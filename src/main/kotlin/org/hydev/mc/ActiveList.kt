@@ -71,6 +71,13 @@ class ActiveList : JavaPlugin(), CommandExecutor
         // Sort
         list = if (reversed) list.sortedBy { it.date }
             else list.sortedByDescending{ it.date }
+
+        // Paginate
+        val start = (page - 1) * pageSize
+        if (start >= list.size) return "Error: No entries on this page".red()
+        list = list.subList(start, (start + pageSize).coerceAtMost(list.size))
+
+        return result
     }
 }
 
