@@ -1,0 +1,6 @@
+name: ActiveList
+description: A plugin to see active players and last login dates
+author: Hykilpikonna
+
+main: org.hydev.mc.ActiveList
+version: 1.0
