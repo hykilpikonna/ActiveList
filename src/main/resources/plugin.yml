@@ -4,3 +4,9 @@ author: Hykilpikonna
 
 main: org.hydev.mc.ActiveList
 version: 1.0
+
+commands:
+  activelist:
+    description: View the active list of players' last login dates
+    usage: /activelist [page=1] [pageSize=10] [-a/-d (sort ascending or descending)]
+    permission: activelist.view
