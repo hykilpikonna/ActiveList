@@ -77,6 +77,15 @@ class ActiveList : JavaPlugin(), CommandExecutor
         if (start >= list.size) return "Error: No entries on this page".red()
         list = list.subList(start, (start + pageSize).coerceAtMost(list.size))
 
+        // Add to result
+        result += list.joinToString("\n") {
+            "§7|§b %-16s §7|§e %-10s §7|§a %-16s §7|".format(
+                it.name,
+                it.date.format("yyyy-MM-dd"),
+                it.money
+            )
+        }
+
         return result
     }
 }
