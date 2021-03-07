@@ -46,6 +46,20 @@ class ActiveList : JavaPlugin(), CommandExecutor
         }
         val page = args.getOrNull(0)?.toIntOrNull() ?: 1
         val pageSize = args.getOrNull(1)?.toIntOrNull() ?: 10
+
+        // Read user dates
+        var list = dir.listFiles()?.filter { it.name.lowercase().endsWith("yml") }?.mapNotNull {
+            try
+            {
+                val yml = YamlConfiguration.loadConfiguration(it)
+                val name = yml.getString("lastAccountName")
+                val logoutDate = yml.getLong("timestamps.logout")
+                val money = yml.getString("money") ?: ""
+
+                User(name, Date(logoutDate), money)
+            }
+            catch (e: Exception) { e.printStackTrace(); null }
+        }
     }
 }
 
