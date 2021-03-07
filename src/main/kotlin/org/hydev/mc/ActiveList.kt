@@ -4,6 +4,9 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.plugin.java.JavaPlugin
+import java.io.File
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 /**
@@ -25,7 +28,14 @@ class ActiveList : JavaPlugin(), CommandExecutor
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, _args: Array<out String>): Boolean
     {
+        sender.sendMessage(command(_args.toMutableList()))
         return true
+    }
+
+    fun command(args: MutableList<String>): String
+    {
+        val dirPlugins = dataFolder.parent
+        val dir = File(dirPlugins, "Essentials/userdata")
     }
 }
 
