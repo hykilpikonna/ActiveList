@@ -63,6 +63,11 @@ class ActiveList : JavaPlugin(), CommandExecutor
             catch (e: Exception) { e.printStackTrace(); null }
         }
 
+        // Create result
+        val pageMax = ceil(list.size.toDouble() / pageSize).toInt()
+        var result = "§3 ActiveList - Page: $page/$pageMax, PageSize: $pageSize \n" +
+            "§7|§f %-16s §7|§f %-10s §7|§f %-16s §7|\n".format("Username", "Last Login", "Money")
+
         // Sort
         list = if (reversed) list.sortedBy { it.date }
             else list.sortedByDescending{ it.date }
