@@ -3,11 +3,13 @@ package org.hydev.mc
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
+import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.*
+import kotlin.math.ceil
 
 /**
  * TODO: Write a description for this class!
@@ -32,7 +34,7 @@ class ActiveList : JavaPlugin(), CommandExecutor
         return true
     }
 
-    fun command(args: MutableList<String>): String
+    private fun command(args: MutableList<String>): String
     {
         val dirPlugins = dataFolder.parent
         val dir = File(dirPlugins, "Essentials/userdata")
@@ -48,7 +50,7 @@ class ActiveList : JavaPlugin(), CommandExecutor
         val pageSize = args.getOrNull(1)?.toIntOrNull() ?: 10
 
         // Read user dates
-        var list = dir.listFiles()?.filter { it.name.lowercase().endsWith("yml") }?.mapNotNull {
+        var list = dir.listFiles()?.filter { it.name.toLowerCase().endsWith("yml") }?.mapNotNull {
             try
             {
                 val yml = YamlConfiguration.loadConfiguration(it)
