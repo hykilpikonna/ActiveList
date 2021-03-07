@@ -60,6 +60,10 @@ class ActiveList : JavaPlugin(), CommandExecutor
             }
             catch (e: Exception) { e.printStackTrace(); null }
         }
+
+        // Sort
+        list = if (reversed) list.sortedBy { it.date }
+            else list.sortedByDescending{ it.date }
     }
 }
 
