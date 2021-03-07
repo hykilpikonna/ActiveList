@@ -29,6 +29,8 @@ class ActiveList : JavaPlugin(), CommandExecutor
     }
 }
 
+data class User(val name: String, val date: Date, val money: String)
+
 fun Date.format(f: String = "yyyy-MM-dd"): String
 {
     val date = this.toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
