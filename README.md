@@ -13,6 +13,14 @@
    - Eg. If you want to show a reversed list (the most inactive player would be on the top) `al -r`
 4. Done
 
+## Building
+
+Linux `./gradlew shadowJar`
+
+Windows `gradlew.bat shadowJar`
+
+The jar will be placed in `build/libs`
+
 ## Screenshots
 
 ![image](https://user-images.githubusercontent.com/22280294/110256924-6e138a00-7f69-11eb-9b76-bb38ce93e7e3.png)
