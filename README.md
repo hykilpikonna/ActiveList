@@ -3,7 +3,7 @@
 
 ## Usage
 
-1. Download the latest version `.jar` in (Releases)[https://github.com/hykilpikonna/ActiveList/releases]
+1. Download the latest version `.jar` in [Releases](https://github.com/hykilpikonna/ActiveList/releases)
 2. Load it
    - Plugman: `plugman load <jar name>`
    - Yum: `yum load ActiveList`
