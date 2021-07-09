@@ -4,7 +4,7 @@ author: Hykilpikonna
 
 main: org.hydev.mc.ActiveList
 version: 1.0
-api-version: 1.14
+api-version: 1.17
 
 load: POSTWORLD
 depend: [Essentials]

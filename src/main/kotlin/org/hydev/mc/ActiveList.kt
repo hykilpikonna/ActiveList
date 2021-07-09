@@ -25,7 +25,7 @@ class ActiveList : JavaPlugin(), CommandExecutor
     {
         super.onEnable()
 
-        getCommand("activelist").executor = this
+        getCommand("activelist")!!.setExecutor(this)
     }
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, _args: Array<out String>): Boolean
@@ -54,7 +54,7 @@ class ActiveList : JavaPlugin(), CommandExecutor
             try
             {
                 val yml = YamlConfiguration.loadConfiguration(it)
-                val name = yml.getString("lastAccountName")
+                val name = yml.getString("last-account-name") ?: ""
                 val logoutDate = yml.getLong("timestamps.logout")
                 val money = yml.getString("money") ?: ""
 
