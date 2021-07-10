@@ -54,7 +54,7 @@ class ActiveList : JavaPlugin(), CommandExecutor
             try
             {
                 val yml = YamlConfiguration.loadConfiguration(it)
-                val name = yml.getString("last-account-name") ?: ""
+                val name = yml.getString("last-account-name") ?: yml.getString("lastAccountName") ?: ""
                 val logoutDate = yml.getLong("timestamps.logout")
                 val money = yml.getString("money") ?: ""
 
