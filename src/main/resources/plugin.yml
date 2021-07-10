@@ -3,8 +3,8 @@ description: A plugin to see active players and last login dates
 author: Hykilpikonna
 
 main: org.hydev.mc.ActiveList
-version: 1.0
-api-version: 1.14
+version: 1.1
+api-version: 1.17
 
 load: POSTWORLD
 depend: [Essentials]
